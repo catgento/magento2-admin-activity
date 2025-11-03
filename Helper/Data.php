@@ -191,13 +191,20 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getConfigValue($path)
     {
-        $moduleValue = $this->scopeConfig->getValue(
-            constant(
-                'self::'
-                . $path
-            ),
-            ScopeConfigInterface::SCOPE_TYPE_DEFAULT
-        );
+        if (strpos((string)$path, '::') !== false) {
+            $moduleValue = $this->scopeConfig->isSetFlag(
+                constant($path),
+                ScopeConfigInterface::SCOPE_TYPE_DEFAULT
+            );
+        } else {
+            $moduleValue = $this->scopeConfig->getValue(
+                constant(
+                    'self::'
+                    . $path
+                ),
+                ScopeConfigInterface::SCOPE_TYPE_DEFAULT
+            );
+        }
         if ($moduleValue) {
             return $moduleValue;
         }

@@ -15,6 +15,6 @@
         <add id="Catgento_AdminActivity::activity_head" title="Admin Activity" module="Catgento_AdminActivity" sortOrder="100" parent="Magento_Backend::system" resource="Catgento_AdminActivity::activity_head" />
         <add id="Catgento_AdminActivity::activity" title="Admin Activity" module="Catgento_AdminActivity" sortOrder="10" parent="Catgento_AdminActivity::activity_head" action="adminactivity/activity" resource="Catgento_AdminActivity::activity" />
         <add id="Catgento_AdminActivity::login_activity" title="Login Activity" module="Catgento_AdminActivity" sortOrder="20" parent="Catgento_AdminActivity::activity_head" action="adminactivity/login" resource="Catgento_AdminActivity::login_activity" />
-        <add id="Catgento_AdminActivity::configuration" title="Configuration" module="Catgento_AdminActivity" sortOrder="40" parent="Catgento_AdminActivity::activity_head" action="adminhtml/system_config/edit/section/admin_activity" resource="Catgento_AdminActivity::configuration"/>
+        <add id="Catgento_AdminActivity::configuration" title="Configuration" module="Catgento_AdminActivity" sortOrder="40" parent="Catgento_AdminActivity::activity_head" action="adminhtml/system_config/edit/section/admin" resource="Catgento_AdminActivity::configuration"/>
     </menu>
 </config>

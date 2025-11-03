@@ -546,6 +546,9 @@ class TrackField extends \Magento\Framework\App\Helper\AbstractHelper
         if (!empty($method) && method_exists($this, $method)) {
             $fieldArray = $this->{$method}();
         }
+        if (!empty($method) && strpos((string)$method, '::') !== false) {
+            $fieldArray = $method();
+        }
         return $fieldArray;
     }
 
